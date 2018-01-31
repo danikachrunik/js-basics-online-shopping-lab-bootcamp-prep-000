@@ -20,13 +20,13 @@ function addToCart(item) {
 function viewCart() {
   var keys = Object.keys(cart);
   if(keys.length === 0) {
-    console.log("Your shopping cart is empty.");
+    console.log(`Your shopping cart is empty.`);
   } else {
-    var message = "In your cart, you have ";
+    var message = `In your cart, you have `;
     for(let i = 0; i < keys.length; i++) {
-      message += cart[i] + " at " + cart[i] + ", ";
+      message ``;
     }
-    message += ".";
+    message += `.`;
     console.log(message);
   }
 }
