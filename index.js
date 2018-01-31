@@ -24,7 +24,7 @@ function viewCart() {
   } else {
     var message = `In your cart, you have `;
     for(let i = 0; i < keys.length; i++) {
-      message ``;
+      message += `${cart.keys[i]}`;
     }
     message += `.`;
     console.log(message);
