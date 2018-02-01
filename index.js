@@ -21,22 +21,26 @@ function addToCart(item) {
 function viewCart() {
   
   var len = cart.length;
+  var message = ``;
   
   if(len === 0) {
-    console.log(`Your shopping cart is empty.`);
+    message = `Your shopping cart is empty.`;
+  } else if(len === 1) {
+    message = `In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]}.`;
+  } else if(len === 2) {
+    message = `In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]} and ${Object.keys(cart[1])} at $${cart[1][Object.keys(cart[1])]}.`;
   } else {
-    var message = `In your cart, you have`;
-     
-    for(var i = 0; i < len; i++) {
-      var key = Object.keys(cart[i]);
+    message = `In your cart, you have`;    
+    for(let i = 0; i < len; i++) {
+      let key = Object.keys(cart[i]);
       if(i === len - 1) {
         message += ` and ${key[0]} at $${cart[i][key[0]]}.`;
       } else {        
         message += ` ${key[0]} at $${cart[i][key[0]]},`;
       }
-    }
-    console.log(message);
+    }    
   }
+  console.log(message);
 }
 
 function total() {
