@@ -25,11 +25,17 @@ function viewCart() {
   if(len === 0) {
     console.log(`Your shopping cart is empty.`);
   } else {
-    var message = `In your cart, you have `;
-    for(let i = 0; i < len; i++) {
-      message += `${}`;
+    var message = `In your cart, you have`;
+     
+    for(var i = 0; i < len; i++) {
+      var key = Object.keys(cart[i]);
+      if(i === len - 1) {
+        message = message.slice(0, -1);
+        message += ` and ${key[0]} at $${cart[i][key[0]]}.`;
+      } else {        
+        message += ` ${key[0]} at $${cart[i][key[0]]},`;
+      }
     }
-    message += `.`;
     console.log(message);
   }
 }
