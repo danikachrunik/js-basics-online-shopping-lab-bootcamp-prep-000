@@ -47,6 +47,7 @@ function total() {
   
   var total = 0;
   var keys = Object.keys(cart);
+  
   for(let i = 0; i < keys.length; i++) {
     total += cart.keys[i];
   }
